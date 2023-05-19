@@ -4,7 +4,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
-  console.log(user?.email);
   const {
     register,
     handleSubmit,
@@ -17,56 +16,91 @@ const AddToys = () => {
   return (
     <section className="size">
       <h1>Add A Toys</h1>
-      <div className="text-center">
+      <div className="flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className="input input-bordered"
-            placeholder="Enter your photo URL..."
-            {...register("Photo", { required: true })}
-          />
-
-          <input
-            className="input input-bordered"
-            placeholder="Enter your Name..."
-            {...register("Name", { required: true })}
-          />
-          <br />
-          <input
-            className="input input-bordered"
-            value={user?.email}
-            {...register("email", { required: true })}
-          />
-
-          <input
-            className="input input-bordered"
-            placeholder="Enter your Name..."
-            {...register("Name", { required: true })}
-          />
-          <br />
-          <input
-            className="input input-bordered"
-            placeholder="Enter your photo URL..."
-            {...register("Photo", { required: true })}
-          />
-
-          <input
-            className="input input-bordered"
-            placeholder="Enter your Name..."
-            {...register("Name", { required: true })}
-          />
-          <br />
-          <input
-            className="input input-bordered"
-            placeholder="Enter your photo URL..."
-            {...register("Photo", { required: true })}
-          />
-
-          <input
-            className="input input-bordered"
-            placeholder="Enter your Name..."
-            {...register("Name", { required: true })}
-          />
-          <br />
+          <div className="flex gap-4">
+            <div>
+              <p>Photo URL:</p>
+              <input
+                className="input input-bordered"
+                type="text"
+                placeholder="Enter your photo URL..."
+                {...register("Photo", { required: true })}
+              />
+            </div>
+            <div>
+              <p>Name:</p>
+              <input
+                className="input input-bordered"
+                type="text"
+                placeholder="Enter your name..."
+                {...register("Name", { required: true })}
+              />
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div>
+              <p>Email:</p>
+              <input
+                className="input input-bordered"
+                type="email"
+                value={user?.email}
+                placeholder="Enter your photo URL..."
+                {...register("Email", { required: true })}
+              />
+            </div>
+            <div>
+              <p>Category:</p>
+              <select
+                className="input input-bordered"
+                {...register("category")}
+              >
+                <option value="remote">Remote</option>
+                <option value="offline">Offline</option>
+                <option value="offline">Offline</option>
+              </select>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div>
+              <p>Price:</p>
+              <input
+                className="input input-bordered"
+                type="number"
+                placeholder="Enter your price..."
+                {...register("price", { required: true })}
+              />
+            </div>
+            <div>
+              <p>Ratting:</p>
+              <input
+                className="input input-bordered"
+                type="number"
+                placeholder="Enter your category..."
+                {...register("ratting", { required: true })}
+              />
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div>
+              <p>Available Quantity:</p>
+              <input
+                className="input input-bordered"
+                type="number"
+                placeholder="Enter your quantity..."
+                {...register("quantity", { required: true })}
+              />
+            </div>
+            <div>
+              <p>Description:</p>
+              <input
+                className="input input-bordered"
+                type="text"
+                placeholder="Enter your category..."
+                {...register("description", { required: true })}
+              />
+            </div>
+          </div>
 
           {errors.exampleRequired && <span>This field is required</span>}
           <input className="btn" type="submit" />

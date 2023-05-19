@@ -91,9 +91,9 @@ const Header = () => {
           </div>
           <div>
             {user ? (
-              <button onClick={handleLogOut} className="btn">
+              <Link to="/" onClick={handleLogOut} className="btn">
                 LogOut
-              </button>
+              </Link>
             ) : (
               <Link to="/login" className="btn">
                 Login
