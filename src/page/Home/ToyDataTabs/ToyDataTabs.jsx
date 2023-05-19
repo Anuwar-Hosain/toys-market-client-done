@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import TabCard from "../TabCard/TabCard";
 
 const ToyDataTabs = () => {
   const [allData, setAllData] = useState();
@@ -25,13 +26,25 @@ const ToyDataTabs = () => {
         </TabList>
 
         <TabPanel>
-          <h2>Any content 1</h2>
+          <div className="grid grid-cols-3 gap-6">
+            {allData?.map((data) => (
+              <TabCard key={data._id} data={data}></TabCard>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <div className="grid grid-cols-3 gap-6">
+            {allData?.map((data) => (
+              <TabCard key={data._id} data={data}></TabCard>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+          <div className="grid grid-cols-3 gap-6">
+            {allData?.map((data) => (
+              <TabCard key={data._id} data={data}></TabCard>
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </section>
