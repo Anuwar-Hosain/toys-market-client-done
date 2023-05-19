@@ -5,6 +5,7 @@ import MyToysTable from "../MyToysTable/MyToysTable";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
     fetch(`http://localhost:5000/my-toys/${user?.email}`)
       .then((res) => res.json())
@@ -13,17 +14,28 @@ const MyToys = () => {
         setMyToys(data);
       });
   }, [user]);
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/my-toys-get/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMyToys(data);
+      });
+  };
   return (
     <section className="size">
       <h1>MyToys</h1>
       <div className="form-control">
         <div className="input-group">
           <input
+            onChange={(e) => setSearchText(e.target.value)}
             type="text"
             placeholder="Search…"
+            required
             className="input input-bordered"
           />
-          <button className="btn btn-square">
+          <button onClick={handleSearch} className="btn btn-square">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
