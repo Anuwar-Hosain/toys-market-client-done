@@ -82,7 +82,7 @@ const Register = () => {
             </div>
             <div className="">
               Already have an account?
-              <Link to="/register" className="ml-2 mainColor">
+              <Link to="/login" className="ml-2 mainColor">
                 Login
               </Link>
             </div>

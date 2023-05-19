@@ -59,12 +59,19 @@ const Header = () => {
             <li>
               <Link to="/">All Toys</Link>
             </li>
-            <li>
-              <Link to="/">My Toys</Link>
-            </li>
-            <li>
-              <Link to="/">Add A Toys</Link>
-            </li>
+            {user ? (
+              <>
+                {" "}
+                <li>
+                  <Link to="/">My Toys</Link>
+                </li>
+                <li>
+                  <Link to="/">Add A Toys</Link>
+                </li>{" "}
+              </>
+            ) : (
+              <></>
+            )}
             <li>
               <Link to="/">Blog</Link>
             </li>
