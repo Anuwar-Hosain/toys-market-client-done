@@ -11,6 +11,16 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    fetch("http://localhost:5000/post-toy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+
     console.log(data);
   };
   return (
@@ -55,9 +65,9 @@ const AddToys = () => {
                 className="input input-bordered"
                 {...register("category")}
               >
-                <option value="remote">Remote</option>
-                <option value="offline">Offline</option>
-                <option value="offline">Offline</option>
+                <option value="sports">Sports</option>
+                <option value="truck">Truck</option>
+                <option value="police">Police</option>
               </select>
             </div>
           </div>
