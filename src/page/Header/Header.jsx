@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <>
       <div className="navbar bg-base-100 size font1">
@@ -62,17 +71,28 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <label className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/800px-Pierre-Person.jpg" />
-            </div>
-          </label>
-          <Link to="/login" className="btn">
-            Login
-          </Link>
-          <Link to="/" className="btn">
-            LogOut
-          </Link>
+          <div>
+            {user ? (
+              <label className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/800px-Pierre-Person.jpg" />
+                </div>
+              </label>
+            ) : (
+              ""
+            )}
+          </div>
+          <div>
+            {user ? (
+              <button onClick={handleLogOut} className="btn">
+                LogOut
+              </button>
+            ) : (
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </>

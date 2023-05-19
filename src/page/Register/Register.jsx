@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const [error, setError] = useState("");
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, photo, email, password);
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
+  };
   return (
     <section className="size">
       <div className="hero min-h-[90vh]">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <div className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name:</span>
@@ -49,6 +71,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
+                name="password"
                 placeholder="password"
                 required
                 className="input input-bordered"
@@ -63,7 +86,7 @@ const Register = () => {
                 Login
               </Link>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
