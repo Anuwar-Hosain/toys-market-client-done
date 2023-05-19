@@ -39,11 +39,11 @@ const AddToys = () => {
               />
             </div>
             <div>
-              <p>Name:</p>
+              <p>Toy Name:</p>
               <input
                 className="input input-bordered"
                 type="text"
-                placeholder="Enter your name..."
+                placeholder="Enter Toy name..."
                 {...register("Name", { required: true })}
               />
             </div>
@@ -60,15 +60,13 @@ const AddToys = () => {
               />
             </div>
             <div>
-              <p>Category:</p>
-              <select
+              <p>Seller Name:</p>
+              <input
                 className="input input-bordered"
-                {...register("category")}
-              >
-                <option value="sports">Sports</option>
-                <option value="truck">Truck</option>
-                <option value="police">Police</option>
-              </select>
+                type="text"
+                placeholder="Enter your name..."
+                {...register("seller_name", { required: true })}
+              />
             </div>
           </div>
           <div className="flex gap-4">
@@ -110,6 +108,14 @@ const AddToys = () => {
                 {...register("description", { required: true })}
               />
             </div>
+          </div>
+          <div>
+            <p>Category:</p>
+            <select className="input input-bordered" {...register("category")}>
+              <option value="sports">Sports</option>
+              <option value="truck">Truck</option>
+              <option value="police">Police</option>
+            </select>
           </div>
 
           {errors.exampleRequired && <span>This field is required</span>}
