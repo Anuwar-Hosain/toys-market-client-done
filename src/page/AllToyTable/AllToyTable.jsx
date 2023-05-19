@@ -1,7 +1,7 @@
 import React from "react";
 
 const AllToyTable = ({ toy, index }) => {
-  const { Name, category, price, quantity, seller_name, Email } = toy;
+  const { Name, category, price, quantity, seller_name, Email } = toy || {};
   return (
     <tr>
       <th>{index}</th>
