@@ -67,7 +67,7 @@ const Header = () => {
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/800px-Pierre-Person.jpg" />
             </div>
           </label>
-          <Link to="/" className="btn">
+          <Link to="/login" className="btn">
             Login
           </Link>
           <Link to="/" className="btn">
