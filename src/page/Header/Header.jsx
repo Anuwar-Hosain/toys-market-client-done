@@ -38,7 +38,9 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="text-xl font2">anuToys</a>
+          <Link to="/" className="text-2xl font2 mainColor2">
+            <samp className="mainColor">anu</samp>Toys
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -65,7 +67,12 @@ const Header = () => {
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/800px-Pierre-Person.jpg" />
             </div>
           </label>
-          <a className="btn">Get started</a>
+          <Link to="/" className="btn">
+            Login
+          </Link>
+          <Link to="/" className="btn">
+            LogOut
+          </Link>
         </div>
       </div>
     </>
