@@ -10,6 +10,7 @@ import ViewDetails from "../page/ViewDetails/ViewDetails";
 import Update from "../page/Update/Update";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFound from "../page/NotFound/NotFound";
+import Blog from "../page/Blog/Blog";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
         element: <Update></Update>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/view-detailsToy/${params.id}`),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "*",
