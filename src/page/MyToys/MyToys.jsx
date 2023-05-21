@@ -6,14 +6,14 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/my-toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMyToys(data);
       });
-  }, [user]);
+  }, [user, control]);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/my-toys-get/${searchText}`)
@@ -21,6 +21,22 @@ const MyToys = () => {
       .then((data) => {
         console.log(data);
         setMyToys(data);
+      });
+  };
+
+  const handleJobUpdate = (data) => {
+    console.log(data);
+    fetch(`http://localhost:5000/updateToy/${data.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.modifiedCount > 0) {
+          setControl(!control);
+        }
+        console.log(result);
       });
   };
   return (
@@ -69,7 +85,12 @@ const MyToys = () => {
           </thead>
           <tbody>
             {myToys.map((toy, index) => (
-              <MyToysTable key={toy._id} toy={toy} index={index}></MyToysTable>
+              <MyToysTable
+                key={toy._id}
+                toy={toy}
+                index={index}
+                handleJobUpdate={handleJobUpdate}
+              ></MyToysTable>
             ))}
           </tbody>
         </table>

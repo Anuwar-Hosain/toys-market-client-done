@@ -2,9 +2,10 @@ import React from "react";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const TabCard = ({ data }) => {
-  const { Photo, Name, price, ratting } = data || {};
+  const { Photo, Name, price, ratting, _id } = data || {};
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
@@ -16,7 +17,9 @@ const TabCard = ({ data }) => {
         <p>Price: {price}TK</p>
         <Rating style={{ maxWidth: 180 }} value={ratting} readOnly />
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/view-details/${_id}`} className="btn btn-primary">
+            View Details
+          </Link>
         </div>
       </div>
     </div>
