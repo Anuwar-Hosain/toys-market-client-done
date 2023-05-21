@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MyToysTable = ({ toy, index }) => {
+const MyToysTable = ({ toy, index, handleDelete }) => {
   const { Name, category, price, quantity, seller_name, _id } = toy || {};
 
   return (
@@ -19,7 +19,12 @@ const MyToysTable = ({ toy, index }) => {
           </Link>
         </td>
         <td>
-          <button className="btn btn-ghost btn-xs">Delete</button>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </>

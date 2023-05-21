@@ -5,8 +5,17 @@ import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const viewData = useLoaderData();
-  const { Name, Photo, category, description, price, quantity, ratting } =
-    viewData;
+  const {
+    Name,
+    Photo,
+    category,
+    description,
+    price,
+    quantity,
+    ratting,
+    seller_name,
+    Email,
+  } = viewData;
   console.log(viewData);
   return (
     <section className="size">
@@ -20,8 +29,14 @@ const ViewDetails = () => {
           <div className="flex">
             <p>Price: {price} TK</p>
             <p>Category: {category}</p>
+            <p>Quantity: {quantity} pice</p>
+            <p>Email: {Email}</p>
+            <p>Seller-Name: {seller_name}</p>
           </div>
-          <Rating style={{ maxWidth: 180 }} value={ratting} readOnly />
+          <div className="">
+            <p>Ratting: </p>
+            <Rating style={{ maxWidth: 140 }} value={ratting} readOnly />
+          </div>
         </div>
       </div>
     </section>
