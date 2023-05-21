@@ -20,7 +20,6 @@ const TabCard = ({ data }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{Name}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
         <p>Price: {price}TK</p>
         <Rating style={{ maxWidth: 180 }} value={ratting} readOnly />
         <div className="card-actions justify-end">
