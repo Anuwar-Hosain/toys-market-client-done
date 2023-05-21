@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const handleLogOut = () => {
     logOut()
       .then()
@@ -82,8 +83,8 @@ const Header = () => {
           <div>
             {user ? (
               <label className="btn btn-ghost btn-circle avatar">
-                <div className="avatar online " title={user?.Email}>
-                  <div className="w-24 rounded-full">
+                <div className="avatar online ">
+                  <div className="w-24 rounded-full" title={user?.email}>
                     <BsFillPersonFill className="w-10 h-10"></BsFillPersonFill>
                   </div>
                 </div>
