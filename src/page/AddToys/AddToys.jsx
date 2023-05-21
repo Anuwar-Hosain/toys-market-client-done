@@ -11,7 +11,7 @@ const AddToys = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/post-toy", {
+    fetch("https://toys-market-server-beta.vercel.app/post-toy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

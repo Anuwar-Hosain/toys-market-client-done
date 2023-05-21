@@ -10,11 +10,13 @@ const ToyDataTabs = () => {
     setCategory(category);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/all-toys/${category}`)
+    fetch(`https://toys-market-server-beta.vercel.app/all-toys/${category}`)
       .then((res) => res.json())
-      .then((result) => setAllData(result));
+      .then((result) => {
+        setAllData(result);
+        console.log(result);
+      });
   }, [category]);
-  console.log(allData);
   return (
     <section className="size">
       <h1>ToyDataTabs</h1>
