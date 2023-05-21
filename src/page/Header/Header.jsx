@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -81,8 +82,10 @@ const Header = () => {
           <div>
             {user ? (
               <label className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pierre-Person.jpg/800px-Pierre-Person.jpg" />
+                <div className="avatar online " title={user?.Email}>
+                  <div className="w-24 rounded-full">
+                    <BsFillPersonFill className="w-10 h-10"></BsFillPersonFill>
+                  </div>
                 </div>
               </label>
             ) : (
