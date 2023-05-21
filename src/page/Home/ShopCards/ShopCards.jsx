@@ -7,9 +7,9 @@ AOS.init();
 const ShopCards = () => {
   return (
     <section className="size">
-      <div className="flex justify-center gap-4 my-28">
+      <div className="lg:flex justify-center gap-4 py-28">
         <div
-          className="card w-80 bg-cyan-300-100 shadow-xl image-full "
+          className="card w-80 bg-cyan-300-100 shadow-xl image-full mb-4 "
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -32,7 +32,7 @@ const ShopCards = () => {
           </div>
         </div>
         <div
-          className="card w-80 bg-base-100 shadow-xl image-full"
+          className="card w-80 bg-base-100 shadow-xl image-full mb-4"
           data-aos="flip-left"
           data-aos-duration="1000"
         >
@@ -55,7 +55,7 @@ const ShopCards = () => {
           </div>
         </div>
         <div
-          className="card w-80 bg-base-100 shadow-xl image-full"
+          className="card w-80 bg-base-100 shadow-xl image-full mb-4"
           data-aos="fade-left"
           data-aos-duration="1000"
         >

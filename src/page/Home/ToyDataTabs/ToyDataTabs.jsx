@@ -18,7 +18,7 @@ const ToyDataTabs = () => {
       });
   }, [category]);
   return (
-    <section className="size">
+    <section className="lg-size md:size1  ">
       <h1>ToyDataTabs</h1>
       <Tabs>
         <TabList>
@@ -29,7 +29,7 @@ const ToyDataTabs = () => {
 
         <TabPanel>
           <div
-            className="grid grid-cols-3 gap-6"
+            className="grid md:grid-cols-3 grid-cols-1 gap-6"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
@@ -40,7 +40,7 @@ const ToyDataTabs = () => {
         </TabPanel>
         <TabPanel>
           <div
-            className="grid grid-cols-3 gap-6"
+            className="grid md:grid-cols-3 grid-cols-1 gap-6"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
@@ -51,7 +51,7 @@ const ToyDataTabs = () => {
         </TabPanel>
         <TabPanel>
           <div
-            className="grid grid-cols-3 gap-6"
+            className="grid md:grid-cols-3 grid-cols-1 gap-6"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
