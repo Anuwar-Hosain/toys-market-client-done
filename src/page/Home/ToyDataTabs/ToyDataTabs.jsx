@@ -18,7 +18,7 @@ const ToyDataTabs = () => {
       });
   }, [category]);
   return (
-    <section className="lg-size md:size1  ">
+    <section className="size">
       <h1>ToyDataTabs</h1>
       <Tabs>
         <TabList>

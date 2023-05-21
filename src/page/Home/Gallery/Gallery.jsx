@@ -11,7 +11,7 @@ const Gallery = () => {
         <h1 className="text-center text-6xl font-bold my-5 ">
           My Toys Collections
         </h1>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
           <div data-aos="zoom-in" data-aos-duration="1000">
             <img
               className="w-96 h-96 object-cover cursor-pointer hover:rotate-180 transition-all duration-500	"
