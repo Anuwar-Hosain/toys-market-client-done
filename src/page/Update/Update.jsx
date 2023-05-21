@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Navigate, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Update = () => {
@@ -8,6 +8,7 @@ const Update = () => {
   const { user } = useContext(AuthContext);
   const { Name, Photo, category, description, price, quantity, ratting, _id } =
     updateData;
+  const navigate = useNavigate();
 
   const {
     register,
@@ -27,6 +28,7 @@ const Update = () => {
       .then((result) => {
         if (result.modifiedCount > 0) {
           alert("Updated");
+          return navigate("/my-toys");
         }
         console.log(result);
       });
