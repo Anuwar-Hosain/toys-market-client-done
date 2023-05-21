@@ -23,8 +23,8 @@ const AllToys = () => {
   };
   return (
     <section className="size">
-      <div className="form-control">
-        <div className="input-group">
+      <div className="form-control  my-8 ">
+        <div className="input-group justify-center items-center">
           <input
             onChange={(e) => setSearchText(e.target.value)}
             type="text"
