@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,6 +21,9 @@ const AddToys = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        if (result.acknowledged == true) {
+          navigate("/");
+        }
       });
 
     console.log(data);
