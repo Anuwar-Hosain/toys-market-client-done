@@ -1,16 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const HomeCard = () => {
   return (
     <section className="size">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="https://images.unsplash.com/photo-1594787317702-9beb2f0bdd1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-            className="max-w-lg rounded-lg shadow-2xl"
-          />
-          <div>
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <img
+              src="https://images.unsplash.com/photo-1594787317702-9beb2f0bdd1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              className="max-w-lg rounded-lg shadow-2xl"
+              data-aos="fade-left"
+            />
+          </div>
+          <div data-aos="fade-right" data-aos-duration="1000">
             <h1 className="text-5xl font-bold">
               We design toys not just for kids but with kids!
             </h1>

@@ -28,21 +28,33 @@ const ToyDataTabs = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-3 gap-6">
+          <div
+            className="grid grid-cols-3 gap-6"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             {allData?.map((data) => (
               <TabCard key={data._id} data={data}></TabCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-6">
+          <div
+            className="grid grid-cols-3 gap-6"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             {allData?.map((data) => (
               <TabCard key={data._id} data={data}></TabCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-3 gap-6">
+          <div
+            className="grid grid-cols-3 gap-6"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             {allData?.map((data) => (
               <TabCard key={data._id} data={data}></TabCard>
             ))}
